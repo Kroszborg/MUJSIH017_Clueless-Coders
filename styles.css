@@ -75,7 +75,7 @@ p {
 .navigation {
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 10px 0;
     margin-bottom: 40px;
 }
 
@@ -93,6 +93,62 @@ p {
 .nav-link:hover {
     background-color: #555;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .button,
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .nav-link img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .button,
+    .nav-link {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .nav-link img {
+        width: 14px;
+        height: 14px;
+    }
 }
 
 /* Dark Mode Styles */
@@ -132,13 +188,4 @@ body.dark-mode .button:hover,
 body.dark-mode .nav-link:hover {
     background-color: #000000;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-}
-
-/* Transition Effects for Dark Mode */
-body.dark-mode .button,
-body.dark-mode .nav-link,
-body.dark-mode .card,
-body.dark-mode h1,
-body.dark-mode p {
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
