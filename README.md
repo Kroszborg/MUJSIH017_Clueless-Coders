@@ -60,29 +60,22 @@ Click the "Fork" button at the top right corner of the repository page.
 **Create a Feature Branch:**
 
 ```bash
-Copy code
 git checkout -b feature-branch
 Make Changes and Commit:
 ```
 
 ```bash
-Copy code
 git add .
 git commit -m "Describe your changes here"
 Push to the Branch:
 ```
 
 ```bash
-Copy code
 git push origin feature-branch
 Submit a Pull Request:
 ```
 
 Go to the repository on GitHub and open a pull request to merge your changes.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Acknowledgments
 
