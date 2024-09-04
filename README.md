@@ -32,7 +32,7 @@ Copy code
 cd SIH_Hackathon
  ```
 
-3. **Open the Application:**
+1. **Open the Application:**
 
 ```bash
 Open index.html in a web browser of your choice to view and interact with the application.
@@ -82,11 +82,14 @@ Submit a Pull Request:
 Go to the repository on GitHub and open a pull request to merge your changes.
 
 ## License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Acknowledgments
+
 Indian Sign Language (ISL) Community: For their efforts in promoting effective communication.
 Dark Mode Icon: SVG Repo for providing the icon used in dark mode toggle.
 
 ## Contact
+
 For any questions or issues, please open an issue in this repository or contact the project maintainer directly.
