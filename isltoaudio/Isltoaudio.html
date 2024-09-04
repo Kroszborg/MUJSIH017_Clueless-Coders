@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+    <link rel="stylesheet" href="isltoaudio.css">
+    <link rel="stylesheet" href="dark-mode.css" id="dark-mode-styles">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <title>ISL Converter</title>    
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-        @media (max-width: 768px) {
-            .sidebar {
-                display: none;
-            }
-            .sidebar.active {
-                display: block;
-            }
-        }
-    </style>
+    <title>ISL Converter</title>
 </head>
 <body class="bg-white">
     <div class="flex h-screen">
         <!-- Sidebar -->
-        <div id="sidebar" class="bg-gray-900 text-white w-64 p-4 flex flex-col justify-between sidebar">
+        <div id="sidebar" class="bg-gray-900 text-white w-64 p-4 flex flex-col justify-between sidebar lg:w-64">
             <div>
+                <button id="collapseButton" class="bg-gray-900 text-white py-2 px-4 rounded flex items-center justify-center w-full mb-4">
+            <i class="fas fa-chevron-left mr-2"></i>
+            Collapse
+        </button>
                 <a href="../index.html">
                     <button class="bg-gray-900 text-white py-2 px-4 rounded flex items-center justify-center w-full mb-4">
                         Home
@@ -53,12 +45,16 @@
                     <i class="fas fa-info-circle mr-2"></i>
                     About
                 </button>
+                <button id="dark-mode-toggle" class="text-white py-2 px-4 rounded flex items-center justify-center w-full">
+                    <i class="fas fa-moon mr-2"></i>
+                    Dark Mode
+                </button>
             </div>
         </div>
         <!-- Main Content -->
-        <div class="flex-1 flex flex-col">
+         <div class="flex-1 flex flex-col lg:ml-64" id="main-content" >
             <div class="p-4 border-b flex justify-between items-center md:hidden">
-                <button id="menuButton" class="text-gray-900" title="Menu"></button>
+                <button id="menuButton" class="text-gray-900" title="Menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <span class="text-gray-900 font-bold">App Title</span>
@@ -77,11 +73,35 @@
         </div>
     </div>
 
-    <script>
-        document.getElementById('menuButton').addEventListener('click', function() {
-            var sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('active');
-        });
-    </script>
+   <script>
+  document.getElementById('collapseButton').addEventListener('click', function() {
+    var sidebar = document.getElementById('sidebar');
+    var mainContent = document.getElementById('main-content');
+    sidebar.classList.toggle('lg:w-64');
+    mainContent.classList.toggle('lg:ml-64');
+    var collapseButton = document.getElementById('collapseButton');
+    if (sidebar.classList.contains('lg:w-64')) {
+      collapseButton.innerHTML = '<i class="fas fa-chevron-left mr-2"></i> Collapse';
+    } else {
+      collapseButton.innerHTML = '<i class="fas fa-chevron-right mr-2"></i> Expand';
+    }
+  });
+
+  document.getElementById('menuButton').addEventListener('click', function() {
+    var sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
+  });
+
+  document.getElementById('dark-mode-toggle').addEventListener('click', function() {
+    var body = document.body;
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', body.classList.contains('dark-mode') ? 'true' : 'false');
+  });
+
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+  }
+</script>
+
 </body>
 </html>

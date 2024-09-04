@@ -1,0 +1,59 @@
+body {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .bg-gray-900 {
+    background-color: #444;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dark-mode .text-white {
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+}
+
+.dark-mode .bg-white {
+    background-color: #333;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dark-mode .text-gray-900 {
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+}
+
+.dark-mode .bg-black {
+    background-color: #444;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dark-mode .fas {
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+}
+body {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+body:not(.dark-mode) {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.dark-mode-toggle {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.dark-mode-toggle:checked {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
