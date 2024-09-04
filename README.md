@@ -1,6 +1,6 @@
 # SIH_Hackathon
 Repository for SIH Hackathon
 
-Website:
+Demo:
 
 https://islconverter.netlify.app/
