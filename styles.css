@@ -94,3 +94,51 @@ p {
     background-color: #555;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode h1 {
+    color: #e0e0e0;
+}
+
+body.dark-mode p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .card-title {
+    color: #e0e0e0;
+}
+
+body.dark-mode .card-description {
+    color: #a0a0a0;
+}
+
+body.dark-mode .button,
+body.dark-mode .nav-link {
+    background-color: #000000;
+    color: #fff;
+}
+
+body.dark-mode .button:hover,
+body.dark-mode .nav-link:hover {
+    background-color: #000000;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Transition Effects for Dark Mode */
+body.dark-mode .button,
+body.dark-mode .nav-link,
+body.dark-mode .card,
+body.dark-mode h1,
+body.dark-mode p {
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}

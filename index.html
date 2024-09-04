@@ -11,6 +11,7 @@
     <div class="navigation">
       <button class="nav-link">Home</button>
       <button class="nav-link">About</button>
+      <button class="nav-link" id="toggle-dark-mode">Toggle Dark Mode</button>
     </div>
 
     <h1>ISL Conversion Technology</h1>
@@ -41,5 +42,11 @@
     </div>
   </div>
 
+  <script>
+    const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
+    toggleDarkModeButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 </body>
 </html>
