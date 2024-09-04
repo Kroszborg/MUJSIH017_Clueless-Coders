@@ -1,8 +1,8 @@
 # ISL Conversion Technology
 
-## Website:
+## Website
 
-https://islconverter.netlify.app/
+<https://islconverter.netlify.app/>
 
 ## Overview
 
@@ -58,7 +58,8 @@ Open index.html in a web browser of your choice to view and interact with the ap
 **To contribute to this project:**
 
 Fork the Repository:
-```
+
+```bash
 Click the "Fork" button at the top right corner of the repository page.
 ```
 
