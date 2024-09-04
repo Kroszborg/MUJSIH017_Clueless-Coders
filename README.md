@@ -58,8 +58,9 @@ Open index.html in a web browser of your choice to view and interact with the ap
 **To contribute to this project:**
 
 Fork the Repository:
-
+```
 Click the "Fork" button at the top right corner of the repository page.
+```
 
 **Create a Feature Branch:**
 
