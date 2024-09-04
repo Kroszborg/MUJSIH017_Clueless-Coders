@@ -32,7 +32,7 @@ Copy code
 cd SIH_Hackathon
  ```
 
-1. **Open the Application:**
+3. **Open the Application:**
 
 ```bash
 Open index.html in a web browser of your choice to view and interact with the application.
@@ -40,15 +40,15 @@ Open index.html in a web browser of your choice to view and interact with the ap
 
 ## Project Structure
 
-index.html: The main HTML file containing the structure and content of the application.
-styles.css: The CSS file for styling the application, including dark mode support.
-dark_mode.svg: Icon used for toggling dark mode.
+1. index.html: The main HTML file containing the structure and content of the application.
+2. styles.css: The CSS file for styling the application, including dark mode support.
+3. dark_mode.svg: Icon used for toggling dark mode.
 
 ## Usage
 
-Home Button: Navigate to the home page.
-About Button: View information about the application.
-Dark Mode Button: Click the icon to toggle between light and dark modes.
+1. Home Button: Navigate to the home page.
+2. About Button: View information about the application.
+3. Dark Mode Button: Click the icon to toggle between light and dark modes.
 
 ## Development
 
@@ -88,7 +88,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Acknowledgments
 
 Indian Sign Language (ISL) Community: For their efforts in promoting effective communication.
-Dark Mode Icon: SVG Repo for providing the icon used in dark mode toggle.
 
 ## Contact
 
