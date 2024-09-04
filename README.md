@@ -28,7 +28,6 @@ To set up and run the application locally, follow these steps:
 2. **Navigate to the Project Directory:**
 
  ```bash
-Copy code
 cd SIH_Hackathon
  ```
 
