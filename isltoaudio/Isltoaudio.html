@@ -61,7 +61,7 @@
 
             <!-- Main content area -->
             <div class="flex-1 p-4">
-                <button id="toggleSidebarButton" class="bg-gray-900 text-white py-2 px-4 rounded mb-4" title="ToggleSidebar">
+                <button id="toggleSidebarButton" class="bg-gray-900 text-white py-2 px-4 rounded mb-4 " title="ToggleSidebar" >
                     <i class="fas fa-bars mr-2"></i> Menu
                 </button>
                 <!-- Rest of your main content goes here -->
@@ -80,20 +80,37 @@
     </div>
 
     <script>
-        // Sidebar Toggle Button Logic inside the main content
+        let sidebarTimer;
+
+        // Sidebar Toggle Button Logic inside the main content (for desktop and larger screens)
         document.getElementById('toggleSidebarButton').addEventListener('click', function() {
             var sidebar = document.getElementById('sidebar');
             var mainContent = document.getElementById('main-content');
-            
-            // Toggle visibility of sidebar
             sidebar.classList.toggle('hidden');
             mainContent.classList.toggle('expanded');
+            if (!sidebar.classList.contains('hidden')) {
+                startSidebarTimer();
+            } else {
+                clearTimeout(sidebarTimer); 
+            }
         });
 
         // Toggle sidebar on small screens (mobile view)
         document.getElementById('menuButton').addEventListener('click', function() {
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('active');
+            document.getElementById('menuButton').style.display = sidebar.classList.contains('active') ? 'none' : 'block';
+            startSidebarTimer();
+        });
+
+        // Auto-hide sidebar when clicking outside
+        document.addEventListener('click', function(event) {
+            var sidebar = document.getElementById('sidebar');
+            var menuButton = document.getElementById('menuButton');
+            var toggleSidebarButton = document.getElementById('toggleSidebarButton');
+            if (!sidebar.contains(event.target) && !menuButton.contains(event.target) && !toggleSidebarButton.contains(event.target) && sidebar.classList.contains('active')) {
+                hideSidebar();
+            }
         });
 
         // Dark Mode Toggle
@@ -107,6 +124,24 @@
         if (localStorage.getItem('darkMode') === 'true') {
             document.body.classList.add('dark-mode');
         }
+
+        // Function to start auto-hide timer
+        function startSidebarTimer() {
+            clearTimeout(sidebarTimer); 
+            sidebarTimer = setTimeout(function() {
+                hideSidebar(); 
+            }, 5000); 
+        }
+
+        // Function to hide the sidebar
+        function hideSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            var menuButton = document.getElementById('menuButton');
+            sidebar.classList.remove('active');
+            sidebar.classList.add('hidden');
+            menuButton.style.display = 'block'; 
+        }
+
     </script>
 </body>
 </html>

@@ -1,23 +1,18 @@
 /* Sidebar Styles */
 #sidebar {
     width: 16rem;
-    /* Default sidebar width */
     padding-left: 1rem;
-    /* Add padding */
     background-color: #1a202c;
-    /* Dark background */
     color: #fff;
-    /* Text color */
     white-space: nowrap;
-    /* Prevent text overflow */
-    transition: width 0.3s ease, padding 0.3s ease, transform 0.3s ease;
-    /* Smooth transition */
+    transition: transform 0.5s ease, width 0.5s ease, padding 0.5s ease;
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* Full height */
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
-    /* Optional: Add shadow for better visual */
+    position: relative;
+    z-index: 100;
+    transform: translateX(0);
 }
 
 #sidebar.hidden {
@@ -25,53 +20,58 @@
     padding: 0;
     overflow: hidden;
     transform: translateX(-100%);
-    /* Move sidebar out of view */
+    opacity: 0;
+    pointer-events: none;
+}
+
+#sidebar.active {
+    transform: translateX(0);
+    opacity: 1;
 }
 
 /* Main Content Styles */
 #main-content {
-    margin-left: 0rem;
-    /* Default margin */
-    transition: margin-left 0.3s ease;
-    /* Smooth transition */
+    margin-left: 0;
+    transition: margin-left 0.5s ease, transform 0.5s ease;
     flex: 1;
-    /* Take remaining space */
     display: flex;
     flex-direction: column;
 }
 
-/* Expand Main Content when Sidebar is Hidden */
 #main-content.expanded {
     margin-left: 0;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #333;
-    color: #fff;
 }
 
 /* Responsive rules for smaller screens */
 @media (max-width: 768px) {
     #sidebar {
-        width: 100%;
-        /* Full-width sidebar on mobile */
-        position: absolute;
-        /* Fix position */
+        width: 50%;
+        position: fixed;
         top: 0;
-        left: 0;
+        left: -50%;
         height: 100%;
-        transform: translateX(-100%);
-        /* Initially hidden off-screen */
+        transition: left 0.4s ease-out, transform 0.4s ease-out, opacity 0.4s ease-out;
     }
 
     #sidebar.active {
+        left: 0;
         transform: translateX(0);
-        /* Slide in the sidebar */
+        opacity: 1;
     }
 
     #main-content {
         margin-left: 0;
-        /* Full width for content on small screens */
     }
+
+    #menuButton {
+        display: block;
+    }
+}
+
+#menuButton {
+    display: none;
+}
+
+body {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
