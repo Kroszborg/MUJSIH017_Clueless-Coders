@@ -12,11 +12,11 @@
 <body class="bg-white">
     <div class="flex h-screen">
         <!-- Sidebar -->
-        <div id="sidebar" class="bg-gray-900 text-white w-64 p-4 flex flex-col justify-between">
+        <div id="sidebar" class="bg-gray-900 text-white w-64 p-4 flex flex-col justify-between ">
             <div>
                 <a href="../index.html">
                     <button class="bg-gray-900 text-white py-2 px-4 rounded flex items-center justify-center w-full mb-4">
-                        Home
+                    <i class="fas fa-home mr-2"></i> Home
                     </button>
                 </a>
                 <button class="bg-white text-gray-900 py-2 px-4 rounded flex items-center justify-center w-full mb-4">
@@ -56,9 +56,16 @@
                 </button>
                 <span class="text-gray-900 font-bold">App Title</span>
             </div>
+
+            <!-- Main content area -->
             <div class="flex-1 p-4">
-                <!-- Main content area -->
+                <button id="toggleSidebarButton" class="bg-gray-900 text-white py-2 px-4 rounded mb-4" title="ToggleSidebar">
+                    <i class="fas fa-bars mr-2"></i>
+                </button>
+                <!-- Rest of your main content goes here -->
             </div>
+
+            <!-- Footer/Input Section -->
             <div class="p-4 border-t">
                 <div class="flex items-center">
                     <input type="text" placeholder="Enter text for ISL to Audio..." class="flex-1 p-2 border rounded-l">
@@ -71,6 +78,22 @@
     </div>
 
     <script>
+        // Sidebar Toggle Button Logic inside the main content
+        document.getElementById('toggleSidebarButton').addEventListener('click', function() {
+            var sidebar = document.getElementById('sidebar');
+            var mainContent = document.getElementById('main-content');
+            
+            // Toggle visibility of sidebar
+            sidebar.classList.toggle('hidden');
+            mainContent.classList.toggle('expanded');
+        });
+
+        // Toggle sidebar on small screens (mobile view)
+        document.getElementById('menuButton').addEventListener('click', function() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        });
+
         // Dark Mode Toggle
         document.getElementById('dark-mode-toggle').addEventListener('click', function() {
             var body = document.body;

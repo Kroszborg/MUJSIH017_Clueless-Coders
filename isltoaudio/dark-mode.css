@@ -1,4 +1,3 @@
-/* Dark Mode Styling */
 body {
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -37,7 +36,24 @@ body.dark-mode {
     color: #fff;
     transition: color 0.3s ease-in-out;
 }
+body {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
 
 body:not(.dark-mode) {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.dark-mode-toggle {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.dark-mode-toggle:checked {
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }

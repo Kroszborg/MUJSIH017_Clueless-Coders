@@ -1,35 +1,73 @@
 /* Sidebar Styles */
 #sidebar {
     width: 16rem;
-    /* Fixed width for the sidebar */
+    /* Default sidebar width */
     padding-left: 1rem;
-    /* Padding inside the sidebar */
+    /* Add padding */
     background-color: #1a202c;
     /* Dark background */
     color: #fff;
     /* Text color */
     white-space: nowrap;
     /* Prevent text overflow */
+    transition: width 0.3s ease, padding 0.3s ease, transform 0.3s ease;
+    /* Smooth transition */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Full height */
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    /* Optional: Add shadow for better visual */
+}
+
+#sidebar.hidden {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    transform: translateX(-100%);
+    /* Move sidebar out of view */
 }
 
 /* Main Content Styles */
 #main-content {
+    margin-left: 0rem;
+    /* Default margin */
+    transition: margin-left 0.3s ease;
+    /* Smooth transition */
+    flex: 1;
+    /* Take remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Expand Main Content when Sidebar is Hidden */
+#main-content.expanded {
     margin-left: 0;
-    /* Adjust the content to account for the fixed sidebar */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
 }
 
 /* Responsive rules for smaller screens */
 @media (max-width: 768px) {
     #sidebar {
-        width: 0;
-        padding: 0;
-        display: none;
+        width: 100%;
+        /* Full-width sidebar on mobile */
+        position: absolute;
+        /* Fix position */
+        top: 0;
+        left: 0;
+        height: 100%;
+        transform: translateX(-100%);
+        /* Initially hidden off-screen */
     }
 
     #sidebar.active {
-        display: block;
-        width: 100%;
-        /* Full-width sidebar on mobile */
+        transform: translateX(0);
+        /* Slide in the sidebar */
     }
 
     #main-content {
