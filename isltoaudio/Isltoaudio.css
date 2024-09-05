@@ -1,68 +1,39 @@
-body {
-    font-family: 'Roboto', sans-serif;
+/* Sidebar Styles */
+#sidebar {
+    width: 16rem;
+    /* Fixed width for the sidebar */
+    padding-left: 1rem;
+    /* Padding inside the sidebar */
+    background-color: #1a202c;
+    /* Dark background */
+    color: #fff;
+    /* Text color */
+    white-space: nowrap;
+    /* Prevent text overflow */
 }
 
+/* Main Content Styles */
+#main-content {
+    margin-left: 0;
+    /* Adjust the content to account for the fixed sidebar */
+}
+
+/* Responsive rules for smaller screens */
 @media (max-width: 768px) {
-    .sidebar {
+    #sidebar {
+        width: 0;
+        padding: 0;
         display: none;
     }
 
-    .sidebar.active {
+    #sidebar.active {
         display: block;
+        width: 100%;
+        /* Full-width sidebar on mobile */
     }
-}
 
-#sidebar {
-    transition: width 0.5s;
-    width: 16rem;
-    /* set the default width */
-    padding-left: 1rem;
-    /* add some padding to the sidebar */
-}
-
-#sidebar.active {
-    width: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-#sidebar.active>* {
-    display: none;
-}
-
-#main-content {
-    transition: margin-left 0.5s;
-}
-
-#sidebar.active+#main-content {
-    margin-left: 0;
-}
-
-.lg:w-0 {
-    width: 0rem;
-}
-
-.lg:w-64 {
-    width: 16rem;
-    padding-left: 1rem;
-    /* add some padding to the sidebar */
-}
-
-.lg:ml-0 {
-    margin-left: 0rem;
-}
-
-.lg:ml-64 {
-    margin-left: 16rem;
-    padding-left: 1rem;
-    /* add some padding to the main content area */
-}
-.sidebar-expanded {
-    width: 16rem;
-    padding-left: 1rem;
-}
-
-.main-content-shifted {
-    margin-left: 16rem;
-    padding-left: 1rem;
+    #main-content {
+        margin-left: 0;
+        /* Full width for content on small screens */
+    }
 }
