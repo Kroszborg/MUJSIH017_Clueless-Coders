@@ -4,6 +4,10 @@
 
 <https://islconverter.netlify.app/>
 
+##Product PPT
+
+<https://github.com/Kroszborg/MUJSIH017_Clueless-Coders/blob/main/Content/MUJSIH017_CluelessCoders.pdf>
+
 ## Overview
 
 ISL Conversion Technology is a web application designed to bridge communication gaps by providing conversions between Indian Sign Language (ISL) and other forms of communication. The app supports the following features:
